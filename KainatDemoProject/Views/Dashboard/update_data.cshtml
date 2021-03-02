@@ -1,0 +1,101 @@
+﻿@{
+
+    Layout = null;
+
+}
+
+
+
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Update</title>
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/script/angular.min.js"></script>
+    <script src="~/script/AngularController/AngularDashboard.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+
+<body style="background-color: grey; padding-top:10%;">
+    <br>
+    <div class="container">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6" style="background-color: white; border-radius: 10%;">
+    <div ng-app="Myapp" ng-controller="DashboardController" data-ng-init="loadrecord(@Convert.ToInt32(Request.QueryString["id"]))">
+
+        <div class="row">
+            <br>
+            <h1 align="center">Add Product</h1>
+            <br>
+            <div class="col-sm-2"></div>
+
+            <div class="col-sm-8">
+              
+                <div class="form-group">
+
+
+                    <label>Product Name</label>
+
+                    <input type="text" ng-model="register.pn" class="form-control" />
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Product Category</label>
+
+                    <input type="text" ng-model="register.pcat" class="form-control" />
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Product Price</label>
+
+                    <input type="text" ng-model="register.pprice" class="form-control" />
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Product Availability</label>
+
+                    <input type="text" ng-model="register.pavail" class="form-control" />
+
+                </div>
+
+                <div class="form-group" align="center">
+
+                    <a href="/Dashboard"><button class="" ng-click="savedata()">{{btntext}}</button></a>
+                    
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-2"></div>
+
+        </div>
+
+    </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+    </div>
+</body>
+
+</html>

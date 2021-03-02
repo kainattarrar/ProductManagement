@@ -1,0 +1,50 @@
+﻿
+@{
+
+    Layout = null;
+
+}
+
+
+
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/script/angular.min.js"></script>
+    <script src="~/script/AngularController/AngularHome.js"></script>
+    <link rel="stylesheet" href="~/script/style.css">
+
+    <title>Index</title>
+
+</head>
+
+<body ng-app="homeapp" ng-controller="LoginController">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <form class="box" method="post">
+                        <h1 style="color:black">Login</h1>
+                        <p class="text-muted"> Please enter your login and password!</p>
+                        <input type="text" name="" placeholder="Username" ng-model="user.username">
+                        <input type="password" name="" placeholder="Password" ng-model="user.password">
+                        <input type="button" class="btn btn-primary" name="" value="{{btntext}}" ng-click="login()">
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

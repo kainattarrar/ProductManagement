@@ -1,0 +1,142 @@
+﻿@{
+
+    Layout = null;
+
+}
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="~/script/angular.min.js"></script>
+    <script src="~/script/AngularController/AngularDashboard.js"></script>
+    <link rel="stylesheet" href="~/script/style.css">
+    <title>Index</title>
+
+</head>
+
+<body>
+
+        
+
+
+    <div>
+        <div ng-app="Myapp" class="dbody">
+            <div class="header">
+                <h1>Welcome to Dashboard!</h1>
+            </div>
+ 
+                <br />
+
+                <div ng-controller="DashboardController" align="center">
+                    <div align="left" style="padding-left: 5%;">
+                    <a href="/Dashboard/update_data">
+                        <button class="btn btn-secondary">
+                            Add Product
+                        </button>
+                    </a>
+                    </div>
+                    <br>
+                    <div align="left" style="padding-left: 5%;">
+                    <p class="ptext"> Search Products</p>
+
+                    <div style="margin: 5px 30px 5px 70px;">
+                        <input placeholder="Type Product ID" style="width:30%" type="text" ng-model="textboxdata" />
+                        <button ng-click="loadrecord(textboxdata)" class="btn btn-secondary">Search</button><br>
+
+                    </div>
+                    </div>
+                    <div align="left" style="padding-left: 5%;">
+                    <p>Your Searched Result:</p>
+                   </div>
+                   <div>
+                        <table border="1">
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Product Category</th>
+                            <th>Product Price</th>
+                            <th>Product Availability</th>
+                        </tr>
+                        <tr ng-repeat="r in myregister">
+                            <td>{{r.Sr_no}}</td>
+
+                            <td>{{r.pn}}</td>
+
+                            <td>{{r.pcat}}</td>
+
+                            <td>{{r.pprice}}</td>
+
+                            <td>{{r.pavail}}</td>
+                        </tr>
+                    </table>
+                    </div>
+                    <div style="margin: 35px 50px 50px 100px;">
+                        <p class="ptext"> All Products</p>
+                        <table class="paleBlueRows" style="width: 70%">
+
+                            <tr style="font-weight:bold">
+
+                                <th>ID No</th>
+
+                                <th>Product Name</th>
+
+                                <th>Category</th>
+
+                                <th>Price</th>
+
+                                <th>Availability</th>
+
+                                <th>Actions</th>
+
+                            </tr>
+
+                            <tr ng-repeat="e in record" ng-class-even="'even'" ng-class-odd="'odd'">
+
+                                <td>{{e.Sr_no}}</td>
+
+                                <td>{{e.pn}}</td>
+
+                                <td>{{e.pcat}}</td>
+
+                                <td>{{e.pprice}}</td>
+
+                                <td>{{e.pavail}}</td>
+
+                                <!--     <td>
+                                                <a href="/Dashboard/update_data?id={{e.Sr_no}}">Update</a>
+                                            </td>
+                -->
+                                <td><a ng-click="deleterecord(e.Sr_no)"><button class="btn btn-danger">Delete</button></a></td>
+
+                            </tr>
+                         
+                        </table>
+                        <br>
+                    </div>
+                    
+                </div>
+             </div>
+        </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
